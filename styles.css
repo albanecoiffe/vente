@@ -1,0 +1,480 @@
+/* Styles globaux */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EEE2DF;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 0.5rem 0;
+    /* Réduire le padding */
+    background-color: rgba(161, 116, 109, 0.6);
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    font-size: 0.875rem;
+    /* Taille de la police réduite */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+}
+
+/* Hearder */
+header {
+    background-color: #B36A5E;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav .logo span {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+nav .nav-links a.cart {
+    font-size: 1.5rem;
+}
+
+nav .nav-links a:hover {
+    color: orange;
+}
+
+nav .nav-links a i {
+    font-size: 1.2rem;
+}
+
+.menu-icon {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background-color: #B36A5E;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: none;
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    nav .nav-links a {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    nav .menu-icon {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+        max-height: 300px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/ACP29399.JPG') no-repeat center center/cover;
+    z-index: -1;
+}
+
+.hero-content {
+    background: rgba(179, 106, 94, 0.6);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 1rem;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.hero .btn {
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.hero .btn:hover {
+    background-color: white;
+    color: #000080;
+}
+
+/* Responsive Styles */
+
+/* For screens larger than 1024px */
+@media (max-width: 1200px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+}
+
+/* For screens between 768px and 1024px */
+@media (max-width: 1024px) {
+    .hero {
+        height: 45vh;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+}
+
+/* For screens between 480px and 768px */
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh;
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero-content {
+        padding: 0.5rem;
+    }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+    .hero {
+        height: 35vh;
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 0.5rem;
+    }
+}
+
+/* Product List Styles */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product-item {
+    border: 1px solid #C89F9C;
+    padding: 1rem;
+    width: calc(25% - 2rem);
+    /* Four items per row */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: black;
+    /* Set text color to black */
+    text-decoration: none;
+}
+
+.product-item h2,
+.product-item p {
+    color: black;
+    /* Set text color to black */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le bouton "Voir plus" */
+.product-item button {
+    padding: 7px 15px;
+    background-color: #B36A5E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #8B4A46;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for product list */
+@media (max-width: 1024px) {
+    .product-item {
+        width: calc(33.333% - 2rem);
+        /* Three items per row */
+    }
+
+    .product-item button {
+        padding: 5px 11px;
+        font-size: 0.95rem;
+    }
+
+    .product-item h2 {
+        font-size: 1.2rem;
+    }
+
+    .product-item p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 2rem);
+        /* Two items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%;
+        /* One item per row */
+    }
+}
+
+/* Product Detail Page */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: flex-start;
+}
+
+.product-images img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-images img.main-image {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.thumbnail-images img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail-images img.selected {
+    border-color: #B36A5E;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-info .price {
+    font-size: 1.5rem;
+    color: #B36A5E;
+    margin-bottom: 1rem;
+}
+
+.product-info .description {
+    margin-bottom: 2rem;
+}
+
+.copy-link {
+    padding: 1rem 2rem;
+    background-color: #B36A5E;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.copy-link:hover {
+    background-color: #8B4A46;
+}
+
+/* Pour les écrans plus larges (ordinateurs) */
+@media (min-width: 769px) {
+    .product-detail {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-images {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        /* Les images miniatures seront à droite de l'image principale */
+    }
+
+    .thumbnail-images {
+        display: flex;
+        flex-direction: column;
+        /* Les vignettes seront en colonne */
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .product-images img.main-image {
+        margin-right: 2rem;
+        /* Ajout d'un espace entre l'image principale et les miniatures */
+    }
+}
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 768px) {
+    .product-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thumbnail-images {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        /* Les vignettes seront en ligne sous l'image principale */
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+}
